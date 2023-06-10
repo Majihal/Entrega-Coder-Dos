@@ -1,0 +1,79 @@
+@mixin title($margin-top, $margin-bottom, $text-aling){
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+    text-align: $text-aling;
+
+}
+
+@mixin measures($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin details-pjs ($width, $height, $background-color){
+    width: $width;
+    height: $height;
+    background-color: $background-color;
+}
+
+
+@mixin container-p{
+    text-align: left;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: auto;
+    max-width: 1440px;
+    gap: 40px;
+    padding-bottom: 32px;
+}
+
+@mixin box-p {
+    margin-top: 20px;
+    max-width: 65ch;
+    line-height: 150%;
+}
+
+@mixin footer-p {
+    justify-content: center;
+    bottom: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+}
+
+@mixin container-pjs{
+    padding: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@mixin header-d {
+    padding-left: 15px;
+    margin-bottom: 20px;
+    gap: 30px;
+}
+
+@mixin grid-c{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+@mixin grid-principal{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    font-size: large;  
+    max-width: 1500px;  
+    gap: 20px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}

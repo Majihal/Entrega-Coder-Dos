@@ -1,0 +1,143 @@
+// imports
+@import "html/import";
+
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $color-texto;
+    list-style: none;
+    text-decoration: none;
+    font-family: $font;
+}
+img{
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+}
+
+body{
+    background-color: $color-principal;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    img{
+        .attack{
+            margin-inline: auto;
+        }
+    }
+    nav{
+        margin-top: 50px;
+        ul{
+            display: flex;
+            gap: 20px;
+            .nav-item:hover{ 
+                opacity: 0.5;
+                text-decoration: underline;
+            }
+        }
+    }
+    .titan{
+        @include measures(200px, 70px);
+    }
+}
+
+main{
+    .titulo{
+        @include title(40px, 40px, center);
+       
+    }
+    .contenedor-p{
+        @include container-p;
+        .caja{
+            @include box-p;
+        }
+        
+    }
+    .contenedor-pjs{
+        @extend %flex-c;
+        @include container-pjs;
+        .pjs{
+            @include details-pjs (400px, 400px, rgba(27, 24, 24, 0.952));
+        }
+        .c-detail{
+            padding: 20px;
+            max-width: 600px;
+            p{
+                padding: 10px 20px;
+                line-height: 150%;
+            }
+            .header-detail{
+                @extend %flex-c;
+                @include header-d;
+            }
+        }
+    }
+    .consulta{
+        text-align: left;
+        padding-bottom: 5rem;
+    }
+  
+    
+    .grid-container{
+        @include grid-principal;
+    }
+    
+    .grid-container div img{
+        @include grid-c;
+    }
+    
+    @media screen and (max-width: 1200px) {
+        .grid-container{
+            grid-template-columns: repeat(2, 300px);
+            justify-content: center;
+        }
+    }
+    
+    
+    @media screen and (max-width: 620px) {
+        .grid-container{
+            grid-template-columns: repeat(1, 1fr);
+        }    
+    }
+    
+    
+    @media screen and (max-width: 1060px) {
+        .contenedor-pjs {
+            text-align: center;
+    
+        }
+        .header-detail{
+            justify-content: center;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .titulo{
+            padding-inline: 1rem;
+        }  
+    }
+}
+
+footer {
+    background-color: $color-footer;
+    margin-top: auto;
+    ul{
+        @include footer-p;
+        li:hover{
+            opacity: 0.5;
+            text-decoration: underline;
+        }
+    }
+}
